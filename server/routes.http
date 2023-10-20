@@ -1,0 +1,26 @@
+POST http://localhost:8080/task
+Content-Type: application/json
+
+
+{
+    "activated": false,
+    "description": "Segunda Task, Uhuuul"
+}
+
+###
+
+GET http://localhost:8080/tasks
+
+###
+
+PUT http://localhost:8080/task/:id
+Content-Type: application/json
+
+{
+     "activated": false,
+        "description": "Segunda Task modifiacada, Uhuuul"
+}
+
+###
+
+DELETE http://localhost:8080/task/id
