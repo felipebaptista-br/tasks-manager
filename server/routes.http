@@ -4,7 +4,7 @@ Content-Type: application/json
 
 {
     "activated": false,
-    "description": "Segunda Task, Uhuuul"
+    "description": "Mais uma Task via Back-end"
 }
 
 ###
@@ -17,8 +17,8 @@ PUT http://localhost:8080/task/:id
 Content-Type: application/json
 
 {
-     "activated": false,
-        "description": "Segunda Task modifiacada, Uhuuul"
+    "activated": false,
+    "description": "Segunda Task modifiacada, Uhuuul"
 }
 
 ###

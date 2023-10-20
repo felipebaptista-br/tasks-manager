@@ -1,0 +1,32 @@
+.ui-button {
+    min-width: 100px;
+    font-size: 12px;
+    cursor: pointer;
+    border: none;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.ui-button-1 {
+    background-color: transparent;
+    border: 1.5px solid var(--color-g);
+    color: var(--color-g);
+}
+
+.ui-button-1:hover {
+    transition: .4s;
+    background-color: var(--color-g);
+    color: var(--color-w);
+}
+
+.ui-button-2 {
+    background-color: transparent;
+    border: 1.5px solid var(--color-r);
+    color: var(--color-r);
+}
+
+.ui-button-2:hover {
+    transition: .4s;
+    background-color: var(--color-r);
+    color: var(--color-w);
+}

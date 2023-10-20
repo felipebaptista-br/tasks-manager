@@ -2,6 +2,11 @@ const fastify = require('fastify')
 const server = fastify()
 const routes = require('./src/routes/routes')
 
+server.register(require('@fastify/cors'), {
+    origin: '*', 
+    methods: 'GET,POST,PUT,PATCH,DELETE',
+    credentials: true,
+})
 server.register(routes)
 
 // Run the server!

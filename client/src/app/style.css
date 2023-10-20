@@ -1,0 +1,10 @@
+.home-content {
+    margin: 85px 0px;
+}
+
+.home-form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}

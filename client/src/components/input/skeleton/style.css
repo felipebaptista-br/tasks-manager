@@ -1,0 +1,11 @@
+.ui-skeleton-input-light {
+    background-color: var(--color-s);
+    height: 50px;
+    border-radius: 5px;
+}
+
+.ui-skeleton-input-dark {
+    background-color: var(--color-4);
+    height: 50px;
+    border-radius: 5px;
+}

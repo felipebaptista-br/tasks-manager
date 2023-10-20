@@ -4,14 +4,16 @@ async function routes(server, _options) {
 
     server.get('/tasks', async (_request, reply) => {
         const tasks = taskController.list()
+
         return tasks
     })
 
     server.post('/task', async (request, reply) => {
-        const { id, activated, description } = request.body
+        const { activated, description } = request.body
 
         await taskController.create({
-            id, activated, description
+            activated,
+            description
         })
 
         return reply.status(201).send()
@@ -25,8 +27,9 @@ async function routes(server, _options) {
             activated,
             description
         })
+        reply.header('Access-Control-Allow-Origin', '*');
 
-        return reply.status(201).send()
+        return reply.status(204).send()
     })
 
     server.delete('/task/:id', async (request, reply) => {
@@ -34,7 +37,7 @@ async function routes(server, _options) {
 
         await taskController.trash(id)
 
-        return reply.status(201).send()
+        return reply.status(204).send()
     })
 
 }
