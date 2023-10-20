@@ -3,14 +3,14 @@ const server = fastify()
 const routes = require('./src/routes/routes')
 
 server.register(require('@fastify/cors'), {
-    origin: '*', 
+    origin: '*',
     methods: 'GET,POST,PUT,PATCH,DELETE',
     credentials: true,
 })
 server.register(routes)
 
 // Run the server!
-server.listen({ port: 8080 }, function (err, address) {
+server.listen({ port: 8080, host: '0.0.0.0' }, function (err, address) {
     if (!err) {
         console.log('listen: ' + address);
     } else {
