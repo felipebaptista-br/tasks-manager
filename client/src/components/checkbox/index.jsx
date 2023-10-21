@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { MdDelete } from 'react-icons/md' 
+import { MdDelete } from 'react-icons/md'
 import Button from '@/components/button'
 
 import './style.css'
@@ -16,7 +16,10 @@ export default function Checkbox({
     onRemove,
 }) {
     const mode = useSelector(state => state.mode)
-    const mediaQuery = window.matchMedia("(max-width: 1000px)")
+    let mediaQuery
+    if (typeof window !== "undefined") {
+        mediaQuery = window.matchMedia("(max-width: 1000px)")
+    }
     return (
         <div className={`ui-checkbox ${mode === 'dark' ? 'ui-checkbox-dark' : 'ui-checkbox-ligh'}`}>
             <input

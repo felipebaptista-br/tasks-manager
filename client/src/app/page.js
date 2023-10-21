@@ -15,7 +15,6 @@ import './style.css'
 
 export default function Home() {
   const mode = useSelector(state => state.mode)
-  const mediaQuery = window.matchMedia("(max-width: 1000px)")
   const [database, setDatabase] = useState()
   const [activeAlert, setActiveAlert] = useState(false)
   const [childrenAlert, setChildrenAlert] = useState()
@@ -111,14 +110,15 @@ export default function Home() {
     })
   }
 
+  let mediaQuery
   if (typeof window !== "undefined") {
+    mediaQuery = window.matchMedia("(max-width: 1000px)")
     if (mode === 'dark') {
       document.body.style = 'background-color: #0E0E11'
     } else {
       document.body.style = 'background-color: #FCFCFC'
     }
   }
-
 
   return (
     <main className='home-main'>
