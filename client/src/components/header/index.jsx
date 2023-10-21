@@ -14,8 +14,10 @@ export default function Header() {
     const mode = useSelector(state => state.mode)
 
     useEffect(() => {
-        const modeStorage = JSON.parse(localStorage.getItem('mode'))
-        dispatch(setMode(modeStorage))
+        if (typeof window !== "undefined") {
+            const modeStorage = JSON.parse(localStorage.getItem('mode'))
+            dispatch(setMode(modeStorage))
+        }
     }, [])
 
     const handleMode = async () => {

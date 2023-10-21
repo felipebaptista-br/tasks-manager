@@ -7,7 +7,9 @@ const modeSlice = createSlice({
     initialState,
     reducers: {
         setMode: (state, { payload }) => {
-            localStorage.setItem('mode', JSON.stringify(payload))
+            if (typeof window !== "undefined") {
+                localStorage.setItem('mode', JSON.stringify(payload))
+            }
             state = payload
             return state
         }

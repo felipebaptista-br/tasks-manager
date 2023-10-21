@@ -1,6 +1,10 @@
+'use client'
+
+import { useState } from 'react'
 import Button from '@/components/button'
 
 import './style.css'
+import { useSelector } from 'react-redux'
 
 export default function Checkbox({
     id,
@@ -10,7 +14,7 @@ export default function Checkbox({
     onChange,
     onRemove,
 }) {
-    const mode = JSON.parse(localStorage.getItem('mode'))
+    const mode = useSelector(state => state.mode)
     return (
         <div className={`ui-checkbox ${mode === 'dark' ? 'ui-checkbox-dark' : 'ui-checkbox-ligh'}`}>
             <input
