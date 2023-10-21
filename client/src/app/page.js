@@ -109,11 +109,11 @@ export default function Home() {
     })
   }
 
-  // if (mode === 'dark') {
-  //   document.body.style = 'background-color: #0E0E11'
-  // } else {
-  //   document.body.style = 'background-color: #FCFCFC'
-  // }
+  if (mode === 'dark') {
+    document.body.style = 'background-color: #0E0E11'
+  } else {
+    document.body.style = 'background-color: #FCFCFC'
+  }
 
   return (
     <main className='home-main'>
