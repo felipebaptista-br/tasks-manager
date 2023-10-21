@@ -8,3 +8,9 @@
     justify-content: space-between;
     margin-bottom: 25px;
 }
+
+@media(max-width: 1000px) {
+    .home-content {
+       margin: 0;
+    }
+}

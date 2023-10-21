@@ -54,3 +54,10 @@
 .icon-github-light:hover {
     color: var(--color-b);
 }
+
+@media(max-width: 1000px) {
+    .ui-header-content {
+        width: 100%;
+        padding: 0 50px;
+    }
+}

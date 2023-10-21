@@ -58,3 +58,13 @@
     grid-template-columns: 1fr;
     margin-top: 40px;
 }
+
+@media(max-width: 1000px) {
+    .ui-card {
+        min-height: calc(100vh - 60px);
+        border: none;
+        border-radius: 0px;
+        padding: 50px;
+        font-size: 1rem;
+    }
+}

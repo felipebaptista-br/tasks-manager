@@ -30,3 +30,9 @@
     background-color: var(--color-r);
     color: var(--color-w);
 }
+
+@media(max-width: 1000px) {
+    .ui-button {
+        width: auto;
+    }
+}
