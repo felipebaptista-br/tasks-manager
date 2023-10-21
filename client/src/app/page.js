@@ -23,12 +23,6 @@ export default function Home() {
     description: undefined
   })
 
-  if (mode === 'dark') {
-    document.body.style = 'background-color: #0E0E11'
-  } else {
-    document.body.style = 'background-color: #FCFCFC'
-  }
-
   useEffect(() => {
     fetchTasks()
   })

@@ -26,6 +26,12 @@ export default function Header() {
         }
     }
 
+    if (mode === 'dark') {
+        document.body.style = 'background-color: #0E0E11'
+    } else {
+        document.body.style = 'background-color: #FCFCFC'
+    }
+
     return (
         <header className={`ui-header ${mode === 'dark' ? 'ui-header-dark' : 'ui-header-light'}`}>
             <div className='ui-header-content'>
