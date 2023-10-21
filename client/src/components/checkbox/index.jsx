@@ -1,10 +1,11 @@
 'use client'
 
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { MdDelete } from 'react-icons/md' 
 import Button from '@/components/button'
 
 import './style.css'
-import { useSelector } from 'react-redux'
 
 export default function Checkbox({
     id,
@@ -15,6 +16,7 @@ export default function Checkbox({
     onRemove,
 }) {
     const mode = useSelector(state => state.mode)
+    const mediaQuery = window.matchMedia("(max-width: 1000px)")
     return (
         <div className={`ui-checkbox ${mode === 'dark' ? 'ui-checkbox-dark' : 'ui-checkbox-ligh'}`}>
             <input
@@ -30,7 +32,7 @@ export default function Checkbox({
             >
                 <p className={checked ? 'ui-checkbox-label-checked' : undefined}>{children}</p>
                 <Button
-                    children='REMOVER'
+                    children={mediaQuery.matches ? <MdDelete size={20} /> : 'REMOVER'}
                     type={2}
                     onClick={onRemove ? onRemove : undefined}
                 />

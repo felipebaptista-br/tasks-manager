@@ -33,6 +33,10 @@
 
 @media(max-width: 1000px) {
     .ui-button {
-        width: auto;
+        min-width: auto;
+    }
+
+    .ui-button-1, .ui-button-2 {
+        border: none;
     }
 }

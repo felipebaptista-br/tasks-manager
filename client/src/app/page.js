@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { AiOutlinePlusCircle } from 'react-icons/ai'
 import Card from '@/components/card'
 import Checkbox from '@/components/checkbox'
 import Input from '@/components/input'
@@ -14,6 +15,7 @@ import './style.css'
 
 export default function Home() {
   const mode = useSelector(state => state.mode)
+  const mediaQuery = window.matchMedia("(max-width: 1000px)")
   const [database, setDatabase] = useState()
   const [activeAlert, setActiveAlert] = useState(false)
   const [childrenAlert, setChildrenAlert] = useState()
@@ -134,10 +136,10 @@ export default function Home() {
               onChange={(event) => setTodo({ ...todo, description: event.target.value })}
             />
             <Button
-              children='CRIAR'
+              children={mediaQuery.matches ? <AiOutlinePlusCircle size={25} /> : 'CRIAR'}
               type={1}
               style={{
-                marginLeft: '20px'
+                marginLeft: '10px'
               }}
               onClick={() => createTask()}
             />
