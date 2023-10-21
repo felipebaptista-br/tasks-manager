@@ -35,7 +35,7 @@ export default function Checkbox({
             >
                 <p className={checked ? 'ui-checkbox-label-checked' : undefined}>{children}</p>
                 <Button
-                    children={mediaQuery.matches ? <MdDelete size={20} /> : 'REMOVER'}
+                    children={typeof window !== "undefined" ? mediaQuery.matches ? <MdDelete size={20} /> : 'REMOVER' : 'REMOVER'}
                     type={2}
                     onClick={onRemove ? onRemove : undefined}
                 />

@@ -119,7 +119,6 @@ export default function Home() {
       document.body.style = 'background-color: #FCFCFC'
     }
   }
-
   return (
     <main className='home-main'>
       <Alert active={activeAlert} children={childrenAlert} type={typeAlert} />
@@ -136,7 +135,7 @@ export default function Home() {
               onChange={(event) => setTodo({ ...todo, description: event.target.value })}
             />
             <Button
-              children={mediaQuery.matches ? <AiOutlinePlusCircle size={25} /> : 'CRIAR'}
+              children={typeof window !== "undefined" ? mediaQuery.matches ? <AiOutlinePlusCircle size={25} /> : 'CRIAR' : 'CRIAR'}
               type={1}
               style={{
                 marginLeft: '10px'
