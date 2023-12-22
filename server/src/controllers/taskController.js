@@ -18,6 +18,8 @@ const create = async (data) => {
 const update = async (id, task) => {
     const { activated, description } = task
     await sql`update tasks set activated = ${activated}, description = ${description} WHERE id = ${id}`
+
+    return { id, activated, description }
 }
 
 const trash = async (id) => {

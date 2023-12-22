@@ -28,3 +28,13 @@
     color: var(--gray-300);
     text-decoration: line-through;
 }
+
+.card-trash {
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.card-trash:hover {
+    transition: .4s;
+    background-color: var(--gray-600);
+}

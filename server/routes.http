@@ -17,10 +17,10 @@ PUT http://localhost:8080/task/:id
 Content-Type: application/json
 
 {
-    "activated": false,
-    "description": "Segunda Task modifiacada, Uhuuul"
+    "activated": true,
+    "description": "Task modifiacada"
 }
 
 ###
 
-DELETE http://localhost:8080/task/id
+DELETE http://localhost:8080/task/:id

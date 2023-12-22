@@ -1,4 +1,4 @@
-import React from "react";
+import React, { KeyboardEvent } from "react";
 
 import './style.css'
 
@@ -10,6 +10,7 @@ interface Props {
     value?: string;
     style?: React.CSSProperties;
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
 export const Input: React.FC<Props> = ({
@@ -19,7 +20,8 @@ export const Input: React.FC<Props> = ({
     className,
     value = '',
     style,
-    onChange
+    onChange,
+    onKeyDown
 }) => {
     return (
         <input
@@ -30,6 +32,7 @@ export const Input: React.FC<Props> = ({
             style={style}
             value={value}
             onChange={onChange}
+            onKeyDown={onKeyDown}
         />
     )
 }

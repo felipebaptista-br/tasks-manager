@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useTask } from "@/context/taskContext";
 import { postTask } from "@/utils/api";
 import { isEmptyString } from "@/utils/helpers/validateVariable";
@@ -19,13 +19,23 @@ export const Panel: React.FC = () => {
         setDataInput(event.target.value)
     }
 
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>): void => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+
+            handleSubmit();
+        }
+    }
+
     const handleSubmit = async () => {
         setDisabledButton(true)
 
         if (!isEmptyString(dataInput)) {
             const res = await postTask({ activated: false, description: dataInput })
-
-            updateTask({ id: res.id, activated: res.activated, description: res.description });
+            if (res) {
+                updateTask({ id: res.id, activated: res.activated, description: res.description });
+                setDataInput('');
+            }
 
             setDisabledButton(false)
         } else {
@@ -39,6 +49,7 @@ export const Panel: React.FC = () => {
                 placeholder='Adicione uma nova tarefa'
                 onChange={handleChange}
                 value={dataInput}
+                onKeyDown={handleKeyDown}
             />
             <Button
                 type='blue'

@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { Task } from '@/interfaces/taskInterfaces';
 import { ErrorResponse } from '@/interfaces/errorInterfaces';
 
 const api = axios.create({
@@ -6,29 +7,25 @@ const api = axios.create({
     baseURL: `http://localhost:8080`
 });
 
-interface Task {
-    id: string,
-    activated: boolean,
-    description: string
-}
-
 const getTasks = async (): Promise<Task[]> => {
     try {
         const response = await api.get('/tasks');
         return response.data;
-    } catch (error) {
-        console.error('Erro na requisição:', error);
-        throw error;
+    } catch (error: any) {
+        const errorResponse: ErrorResponse = error.response?.data || { message: 'Erro desconhecido ao listar tarefas.' };
+        throw new Error(`Erro ao criar tarefa: ${errorResponse.message}`);
     }
 };
 
 
-const putTask = (task: {
-    id: string,
-    activated: boolean,
-    description: string
-}) => {
-
+const putTask = async (task: Task): Promise<any> => {
+    try {
+        const response = await api.put(`/task/${task.id}`, task);
+        return response.data;
+    } catch (error: any) {
+        const errorResponse: ErrorResponse = error.response?.data || { message: 'Erro desconhecido ao alterar tarefa.' };
+        throw new Error(`Erro ao criar tarefa: ${errorResponse.message}`);
+    }
 }
 
 const postTask = async (task: { activated: boolean, description: string }): Promise<any> => {
@@ -41,8 +38,14 @@ const postTask = async (task: { activated: boolean, description: string }): Prom
     }
 };
 
-const deleteTask = (id: string) => {
-
+const deleteTask = async (id: string) => {
+    try {
+        const response = await api.delete(`/task/${id}`);
+        return response.data;
+    } catch (error: any) {
+        const errorResponse: ErrorResponse = error.response?.data || { message: 'Erro desconhecido ao deletar tarefa.' };
+        throw new Error(`Erro ao criar tarefa: ${errorResponse.message}`);
+    }
 }
 
 export {
