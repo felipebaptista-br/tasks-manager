@@ -1,0 +1,18 @@
+.ui-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    text-align: center;
+    background-color: var(--gray-400);
+    border-radius: 12px;
+    font-size: 12px;
+    color: var(--gray-200);
+}
+
+@media screen and (max-width: 750px) {
+    .ui-tag {
+        font-size: 10px;
+        padding: 2.5 5px;
+    }
+}

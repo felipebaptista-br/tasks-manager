@@ -1,0 +1,23 @@
+.ui-input {
+    width: 100%;
+    min-height: 50px;
+    padding: 0 20px;
+    font-size: 16px;
+    background-color: var(--gray-500);
+    border: 2px solid var(--gray-700);
+    border-radius: 10px;
+    color: var(--gray-100);
+}
+
+.ui-input:focus {
+    outline: none;
+    border: 2px solid var(--purple-dark);
+}
+
+@media screen and (max-width: 750px) {
+    .ui-input {
+        min-height: 40px;
+        font-size: 14px;
+        padding: 0 10px;
+    }
+}

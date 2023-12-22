@@ -1,0 +1,41 @@
+.container-task-panel {
+    height: 50px;
+}
+
+.container-task-panel-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-task-panel-content h3 {
+    font-size: 14px;
+}
+
+.container-task-panel-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--blue);
+}
+
+.container-task-panel-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--purple);
+}
+
+@media screen and (max-width: 750px) {
+    .container-task-panel-left {
+        gap: 5px;
+    }
+
+    .container-task-panel-right {
+        gap: 5px;
+    }
+
+    .container-task-panel-content h3 {
+        font-size: 12px;
+    }
+}

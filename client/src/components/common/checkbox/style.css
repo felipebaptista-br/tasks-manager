@@ -1,0 +1,27 @@
+/* Checkbox.css */
+
+.ui-checkbox {
+    cursor: pointer;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid var(--blue);
+    outline: none;
+}
+
+.ui-checkbox:checked {
+    background-color: var(--purple-dark);
+    border: 2px solid var(--purple-dark);
+}
+
+.ui-checkbox:checked::before {
+    content: "";
+    background-image: url('../../../assets/check.svg');
+    background-size: 90% 90%; /* Ou ajuste conforme necessário */
+    background-position: center; /* Centralize o conteúdo */
+    width: 100%;
+    height: 100%;
+    display: block;
+}

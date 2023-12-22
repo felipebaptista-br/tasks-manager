@@ -5,7 +5,7 @@ let { PGHOST, PGDATABASE, PGUSER, PGPASSWORD, ENDPOINT_ID } = process.env;
 
 const sql = postgres({
   host: 'ep-shrill-butterfly-47488354.us-east-2.aws.neon.tech',
-  database: 'neondb',
+  database: 'tasks-manager',
   username: 'felipe.baptista06',
   password: 'RCLlgP1K3Axw',
   port: 5432,

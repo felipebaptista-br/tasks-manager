@@ -1,0 +1,18 @@
+.panel-main {
+    display: flex;
+    gap: 10px;
+}
+
+.panel-icon-plus {
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 750px) {
+    .panel-main {
+        gap: 2.5px;
+    }
+
+    .panel-icon-plus {
+        margin-left: 7.5px;
+    }
+}
