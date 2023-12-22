@@ -3,8 +3,7 @@ import { Task } from '@/interfaces/taskInterfaces';
 import { ErrorResponse } from '@/interfaces/errorInterfaces';
 
 const api = axios.create({
-    // baseURL: `https://todo-list-00qv.onrender.com`,
-    baseURL: `http://localhost:8080`
+    baseURL: `https://todo-list-00qv.onrender.com`,
 });
 
 const getTasks = async (): Promise<Task[]> => {
