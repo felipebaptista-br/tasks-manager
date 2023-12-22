@@ -25,3 +25,17 @@
     gap: 10px;
     color: var(--purple);
 }
+
+@media screen and (max-width: 750px) {
+    .container-task-panel-left {
+        gap: 5px;
+    }
+
+    .container-task-panel-right {
+        gap: 5px;
+    }
+
+    .container-task-panel-content h3 {
+        font-size: 12px;
+    }
+}

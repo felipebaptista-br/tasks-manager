@@ -42,3 +42,19 @@
     border-top: 2px solid var(--gray-400);
     border-radius: 10px;
 }
+
+@media screen and (max-width: 750px) {
+    .no-task {
+        padding: 15px;
+    }
+
+    .no-task h3 {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .no-task p {
+        font-size: 14px;
+        text-align: center;
+    }
+}

@@ -7,5 +7,5 @@ interface Props {
 }
 
 export const Tag: React.FC<Props> = ({ children }) => {
-    return <article className='tag-main'>{children}</article>
+    return <article className='ui-tag'>{children}</article>
 }

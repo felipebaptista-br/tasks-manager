@@ -13,3 +13,11 @@
     outline: none;
     border: 2px solid var(--purple-dark);
 }
+
+@media screen and (max-width: 750px) {
+    .ui-input {
+        min-height: 40px;
+        font-size: 14px;
+        padding: 0 10px;
+    }
+}
