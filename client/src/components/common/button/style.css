@@ -1,0 +1,26 @@
+.ui-button {
+    cursor: pointer;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+}
+
+.ui-button-blue {
+    color: #FFF;
+    background-color: var(--blue-dark);
+}
+
+.ui-button-blue:hover {
+    transition: .4s;
+    background-color: var(--blue);
+}
+
+.ui-button-blue:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
