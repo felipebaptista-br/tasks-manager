@@ -1,6 +1,7 @@
 'use client'
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useTask } from "@/context/taskContext";
 import { postTask } from "@/utils/api";
 import { isEmptyString } from "@/utils/helpers/validateVariable";
 import { Button, Input } from "@/components";
@@ -10,6 +11,7 @@ import Plus from '@/assets/plus.svg'
 import './style.css'
 
 export const Panel: React.FC = () => {
+    const { updateTask } = useTask();
     const [dataInput, setDataInput] = useState<string>('');
     const [disabledButton, setDisabledButton] = useState<boolean>(false);
 
@@ -22,7 +24,8 @@ export const Panel: React.FC = () => {
 
         if (!isEmptyString(dataInput)) {
             const res = await postTask({ activated: false, description: dataInput })
-            console.log(res);
+
+            updateTask({ id: res.id, activated: res.activated, description: res.description });
 
             setDisabledButton(false)
         } else {
@@ -31,7 +34,7 @@ export const Panel: React.FC = () => {
     }
 
     return (
-        <section className='panel-main'>
+        <div className='panel-main'>
             <Input
                 placeholder='Adicione uma nova tarefa'
                 onChange={handleChange}
@@ -49,6 +52,6 @@ export const Panel: React.FC = () => {
                     alt='Ícone de adição'
                 />
             </Button>
-        </section>
+        </div>
     )
 }

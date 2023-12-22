@@ -12,6 +12,7 @@ const create = async (data) => {
     const id = randomUUID()
     let task = new Task(id, data.activated, data.description)
     await sql`insert into tasks (id, activated, description) VALUES (${id}, ${task.activated}, ${task.description})`
+    return task
 }
 
 const update = async (id, task) => {

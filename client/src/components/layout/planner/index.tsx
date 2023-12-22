@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from "react";
+import { useTask } from "@/context/taskContext";
 import { sortedTask } from "@/utils/helpers/taskArray";
 import { countActiveTasks, countTasks } from "@/utils/helpers/tasksCounter";
 import { getTasks } from "@/utils/api";
@@ -10,24 +11,17 @@ import Clipboard from '@/assets/clipboard.svg';
 
 import './style.css'
 
-interface Tasks {
-    id: string;
-    activated: boolean;
-    description: string;
-}
-
 export const Planner: React.FC = () => {
-    const [tasks, setTasks] = useState<Tasks[]>([]);
+    const { tasks, updateTasks } = useTask();
 
     useEffect(() => {
         const fetchTasks = async () => {
-            const res: Tasks[] = await getTasks()
-            setTasks(res.reverse())
+            const res = await getTasks()
+            updateTasks(res)
         };
 
         fetchTasks();
     }, [])
-
 
     const handleAwaitFech = () => {
         if (tasks && tasks.length !== 0) {

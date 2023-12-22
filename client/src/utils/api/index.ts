@@ -2,7 +2,8 @@ import axios from 'axios'
 import { ErrorResponse } from '@/interfaces/errorInterfaces';
 
 const api = axios.create({
-    baseURL: `https://todo-list-00qv.onrender.com`,
+    // baseURL: `https://todo-list-00qv.onrender.com`,
+    baseURL: `http://localhost:8080`
 });
 
 interface Task {

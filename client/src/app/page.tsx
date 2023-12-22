@@ -1,3 +1,4 @@
+import { TaskProvider } from '@/context/taskContext'
 import {
   Panel,
   Planner
@@ -9,8 +10,10 @@ export default function Home() {
 
   return (
     <main className='home-main'>
-      <Panel />
-      <Planner />
+      <TaskProvider>
+        <Panel />
+        <Planner />
+      </TaskProvider>
     </main>
   )
 }

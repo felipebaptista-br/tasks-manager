@@ -4,7 +4,7 @@ Content-Type: application/json
 
 {
     "activated": false,
-    "description": "Mais uma Task via Back-end"
+    "description": "Task de testes usando routes.HTTP"
 }
 
 ###

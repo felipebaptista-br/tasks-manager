@@ -10,13 +10,16 @@ async function routes(server, _options) {
 
     server.post('/task', async (request, reply) => {
         const { activated, description } = request.body
+        let databaseResponse;
 
         await taskController.create({
             activated,
             description
+        }).then((res) => {
+            databaseResponse = res
         })
 
-        return reply.status(201).send()
+        return reply.status(201).send(databaseResponse)
     })
 
     server.put('/task/:id', async (request, reply) => {
