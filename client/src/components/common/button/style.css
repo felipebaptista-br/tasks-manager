@@ -10,6 +10,12 @@
     border-radius: 10px;
 }
 
+.ui-button:disabled {
+    opacity: 0.8;
+    color: #FFF;
+    cursor: not-allowed;
+}
+
 .ui-button-blue {
     color: #FFF;
     background-color: var(--blue-dark);
