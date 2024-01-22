@@ -1,3 +1,12 @@
+/**
+ * Renders a checkbox input element.
+ *
+ * @param {Props} checked - Indicates if the checkbox is checked
+ * @param {Props} className - Additional CSS class for styling
+ * @param {Props} onChange - Event handler for when the checkbox state changes
+ * @return {JSX.Element} The checkbox input element
+ */
+
 import React from "react";
 
 import './style.css'

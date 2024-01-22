@@ -1,4 +1,18 @@
-import React, { KeyboardEvent } from "react";
+/**
+ * React functional component for rendering an input element.
+ *
+ * @param {Props} id - the unique identifier for the input
+ * @param {string} type - the type of the input (default is 'text')
+ * @param {string} placeholder - the placeholder text for the input
+ * @param {string} className - the CSS class for styling the input
+ * @param {string} value - the value of the input (default is an empty string)
+ * @param {object} style - the inline style for the input
+ * @param {Function} onChange - the event handler for input change
+ * @param {Function} onKeyDown - the event handler for key down
+ * @return {JSX.Element} the input element
+ */
+
+import React from "react";
 
 import './style.css'
 

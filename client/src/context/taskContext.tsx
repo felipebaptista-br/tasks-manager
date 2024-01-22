@@ -1,5 +1,12 @@
 'use client'
 
+/**
+ * TaskProvider component that provides task-related functionality to its children.
+ *
+ * @param {ReactNode} children - The children components to be wrapped by the TaskProvider.
+ * @return {ReactNode} The wrapped children components with task-related functionality.
+ */
+
 import React, { createContext, useContext, ReactNode, useState } from "react";
 import { Task } from "@/interfaces/taskInterfaces";
 

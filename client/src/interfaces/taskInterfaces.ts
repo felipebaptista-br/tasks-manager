@@ -1,4 +1,3 @@
-
 interface Task {
     id: string;
     activated: boolean;

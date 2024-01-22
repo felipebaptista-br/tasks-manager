@@ -1,3 +1,15 @@
+/**
+ * React functional component for rendering a button.
+ *
+ * @param {Props} children - the content of the button
+ * @param {string} className - the CSS class for styling
+ * @param {string} type - the type of button (e.g. primary, secondary)
+ * @param {object} style - inline styles for the button
+ * @param {function} onClick - function to be executed on button click
+ * @param {boolean} disabled - whether the button is disabled
+ * @return {JSX.Element} the rendered button element
+ */
+
 import React, { ReactNode } from "react";
 
 import './style.css'
